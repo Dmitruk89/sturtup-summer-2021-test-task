@@ -5,8 +5,8 @@ import searchIcon from '../../../assets/icon/search.png'
 function SearchField() {
   return (
     <div className={styles.searchField}>
-        <input type='search' />
-        <img alt='search-icon' src={searchIcon} />
+        <input type="search" placeholder="Enter GitHub username" />
+        <img alt="search-icon" src={searchIcon} />
     </div>
   );
 }
