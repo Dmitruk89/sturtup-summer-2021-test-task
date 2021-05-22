@@ -1,0 +1,44 @@
+.profileCard {
+    width: 300px;
+    padding-top: 40px;
+    font-family: Inter;
+    font-style: normal;
+
+    img {
+        border-radius: 50%;
+    }
+
+    h2 {
+        margin-top: 28px;
+        margin-bottom: 12px;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 130%;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 22px;
+
+        color: #0064EB;
+    }
+}
+
+.followInfo {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 16px;
+
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
