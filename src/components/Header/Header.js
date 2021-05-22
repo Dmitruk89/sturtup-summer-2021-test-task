@@ -2,11 +2,14 @@ import styles from './Header.module.scss';
 import logo from '../../assets/Logo.png';
 import SearchField from '../common/SearchField/SearchField';
 
-function Header() {
+function Header(props) {
   return (
     <div className={styles.header}>
         <img alt='logo' src={logo} />
-        <SearchField />
+        <SearchField 
+          inputValue={props.inputValue} 
+          inputChange={props.inputChange}
+          />
     </div>
   );
 }

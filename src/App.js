@@ -1,11 +1,11 @@
 import styles from './App.module.scss';
-import Header from './components/Header/Header';
-import Page from './Pages/Page';
+import HeaderContainer from './components/Header/HeaderContainer';
+import Page from './pages/Page';
 
 function App() {
   return (
     <div className={styles.App}>
-      <Header />
+      <HeaderContainer />
       <Page />
     </div>
   );
