@@ -7,8 +7,10 @@ function ProfilePage(props) {
   return (
     <div className={styles.profilePage}>
         <ProfileInfo profile={props.profile}/>
-        {/* <ProfileRepos /> */}
+        {props.repositories.length > 0 ?
+        <ProfileRepos totalRepos={props.profile.repos} repositories={props.repositories}/> :
         <NoRepos />
+      }
     </div>
   );
 }

@@ -13,6 +13,7 @@ function Header(props) {
           toggleShowProfile={props.toggleShowProfile}
           toggleHasUser={props.toggleHasUser}
           setUserData={props.setUserData}
+          setUserRepos={props.setUserRepos}
           />
     </div>
   );

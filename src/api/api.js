@@ -12,7 +12,7 @@ export const usersAPI = {
       },
     getRepos(userName, page, perPage) {
     return instance
-      .get(`users/${userName}/repos?page=${page}&count=${perPage}`)
+      .get(`users/${userName}/repos?page=${page}&per_page=${perPage}`)
       .then((response) => response.data);
   },
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { inputChange, toggleIsFetching } from '../../redux/headerReducer';
-import { toggleShowProfile, toggleHasUser, setUserData } from '../../redux/profileReducer';
+import { toggleShowProfile, toggleHasUser, setUserData, setUserRepos } from '../../redux/profileReducer';
 import Header from './Header';
 
 class HeaderContainer extends React.Component{
@@ -14,6 +14,7 @@ class HeaderContainer extends React.Component{
         toggleShowProfile={this.props.toggleShowProfile}
         toggleHasUser={this.props.toggleHasUser}
         setUserData={this.props.setUserData}
+        setUserRepos={this.props.setUserRepos}
         />
     }
 
@@ -29,5 +30,6 @@ export default connect(mapStateToProps, {
     toggleIsFetching,
     toggleShowProfile,
     toggleHasUser,
-    setUserData
+    setUserData,
+    setUserRepos
 })(HeaderContainer);

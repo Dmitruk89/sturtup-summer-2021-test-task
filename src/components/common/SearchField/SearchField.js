@@ -21,8 +21,14 @@ function SearchField(props) {
                 linkName: data.login,
                 linkUrl: data.html_url,
                 followers: data.followers,
-                following: data.following
+                following: data.following,
+                repos: data.public_repos,
               })
+            })
+            usersAPI.getRepos(props.inputValue, 1, 5)
+            .then(data => {
+              console.log(data);
+              props.setUserRepos(data);
             })
           }}>
         <input 

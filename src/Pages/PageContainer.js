@@ -9,6 +9,7 @@ class PageContainer extends React.Component{
         showProfile={this.props.showProfile}
         hasUser={this.props.hasUser}
         profile={this.props.profile}
+        repositories={this.props.repositories}
         />
     }
 
@@ -17,7 +18,8 @@ class PageContainer extends React.Component{
 const mapStateToProps = (state) => ({
     showProfile: state.profile.showProfile,
     hasUser: state.profile.hasUser,
-    profile: state.profile.profile
+    profile: state.profile.profile,
+    repositories: state.profile.repositories,
 })
 
 export default connect(mapStateToProps, {

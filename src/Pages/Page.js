@@ -9,7 +9,10 @@ function Page(props) {
     <div className={styles.page}>
       {
       props.showProfile ?
-      <ProfilePage profile={props.profile}/> :
+      <ProfilePage 
+        profile={props.profile}
+        repositories={props.repositories}
+        /> :
       <DefaultPage />
       }
       {/* <EmptyStatePage /> */}

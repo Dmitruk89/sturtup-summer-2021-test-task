@@ -1,6 +1,8 @@
 const TOGGLE_HAS_USER = 'TOGGLE_HAS_USER';
 const TOGGLE_SHOW_PROFILE = 'TOGGLE_SHOW_PROFILE';
 const SET_USER_DATA = 'SET_USER_DATA';
+const SET_USER_REPOS = 'SET_USER_REPOS';
+
 
 const defaultState = {
     showProfile: false,
@@ -13,12 +15,10 @@ const defaultState = {
         linkName: null,
         linkUrl: null,
         followers: null,
-        following: null
+        following: null,
+        repos: null,
     },
-    repository: {
-        link: null,
-        description: null,
-    }
+    repositories: []
 }
 
 const profileReducer = (state = defaultState, action) => {
@@ -38,6 +38,11 @@ const profileReducer = (state = defaultState, action) => {
                 ...state,
                 profile: {...action.data},
             }
+        case SET_USER_REPOS:
+            return {
+                ...state,
+                repositories: [...action.repos],
+            }
         default: return state;
     }
 }
@@ -45,5 +50,6 @@ const profileReducer = (state = defaultState, action) => {
 export const toggleHasUser = () => ({type: TOGGLE_HAS_USER});
 export const toggleShowProfile = () => ({type: TOGGLE_SHOW_PROFILE});
 export const setUserData = (data) => ({type: SET_USER_DATA, data})
+export const setUserRepos = (repos) => ({type: SET_USER_REPOS, repos})
 
 export default profileReducer;

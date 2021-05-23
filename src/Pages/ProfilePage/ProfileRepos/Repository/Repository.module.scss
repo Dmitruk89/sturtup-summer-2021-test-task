@@ -2,10 +2,14 @@
     background-color: #fff;
     border-radius: 8px;
     padding: 24px 32px;
+    margin-bottom: 24px;
 
-    h3 {
-        color: #0064EB;
-        font-size: 24px;
+    a {
+        text-decoration: none;
+        h3 {
+            color: #0064EB;
+            font-size: 24px;
+        }
     }
 
     p {
