@@ -1,4 +1,4 @@
-const TOGGLE_HAS_USER = 'TOGGLE_HAS_USER';
+const TOGGLE_SHOW_EMPTY = 'TOGGLE_SHOW_EMPTY';
 const TOGGLE_SHOW_PROFILE = 'TOGGLE_SHOW_PROFILE';
 const SET_USER_DATA = 'SET_USER_DATA';
 const SET_USER_REPOS = 'SET_USER_REPOS';
@@ -6,7 +6,7 @@ const SET_USER_REPOS = 'SET_USER_REPOS';
 
 const defaultState = {
     showProfile: false,
-    hasUser: false,
+    showEmpty: false,
     hasRepos: false,
     reposCount: null,
     profile: {
@@ -23,15 +23,15 @@ const defaultState = {
 
 const profileReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case TOGGLE_HAS_USER:
+        case TOGGLE_SHOW_EMPTY:
             return {
                 ...state,
-                hasUser: !state.hasUser,
+                showEmpty: action.bool,
             }
         case TOGGLE_SHOW_PROFILE:
             return {
                 ...state,
-                showProfile: !state.showProfile,
+                showProfile: action.bool,
             }
         case SET_USER_DATA:
             return {
@@ -47,8 +47,8 @@ const profileReducer = (state = defaultState, action) => {
     }
 }
 
-export const toggleHasUser = () => ({type: TOGGLE_HAS_USER});
-export const toggleShowProfile = () => ({type: TOGGLE_SHOW_PROFILE});
+export const toggleShowEmpty = (bool) => ({type: TOGGLE_SHOW_EMPTY, bool});
+export const toggleShowProfile = (bool) => ({type: TOGGLE_SHOW_PROFILE, bool});
 export const setUserData = (data) => ({type: SET_USER_DATA, data})
 export const setUserRepos = (repos) => ({type: SET_USER_REPOS, repos})
 

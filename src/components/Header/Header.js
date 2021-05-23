@@ -11,9 +11,10 @@ function Header(props) {
           inputChange={props.inputChange}
           toggleIsFetching={props.toggleIsFetching}
           toggleShowProfile={props.toggleShowProfile}
-          toggleHasUser={props.toggleHasUser}
+          toggleShowEmpty={props.toggleShowEmpty}
           setUserData={props.setUserData}
           setUserRepos={props.setUserRepos}
+          clearInput={props.clearInput}
           />
     </div>
   );

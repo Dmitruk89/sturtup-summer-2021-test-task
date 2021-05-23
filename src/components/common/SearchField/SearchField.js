@@ -8,13 +8,14 @@ function SearchField(props) {
     <div className={styles.searchField}>
       <form onSubmit={(e) => {
             e.preventDefault();
+            props.clearInput();
             props.toggleIsFetching();
             usersAPI.getProfile(props.inputValue)
             .then(data => {
-              console.log(data);
+              if (data) {
               props.toggleIsFetching();
-              props.toggleHasUser();
-              props.toggleShowProfile();
+              props.toggleShowProfile(true);
+              props.toggleShowEmpty(false);
               props.setUserData({
                 avatar: data.avatar_url,
                 fullName: data.name.split('.').join(' '),
@@ -24,11 +25,20 @@ function SearchField(props) {
                 following: data.following,
                 repos: data.public_repos,
               })
+              } else {
+                props.toggleIsFetching();
+                props.toggleShowProfile(false);
+                props.toggleShowEmpty(true);
+              }
+              
             })
             usersAPI.getRepos(props.inputValue, 1, 5)
             .then(data => {
-              console.log(data);
+              if (data) {
               props.setUserRepos(data);
+            } else {
+              console.log('no data');
+            }
             })
           }}>
         <input 

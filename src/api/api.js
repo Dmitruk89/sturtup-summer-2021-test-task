@@ -6,13 +6,15 @@ const instance = axios.create({
 
 export const usersAPI = {
     getProfile(userName) {
-        return instance
-          .get(`users/${userName}`)
-          .then((response) => response.data);
-      },
+        return instance.get(`users/${userName}`)
+          .then((response) => response.data)
+          .catch((err) => {
+            console.log(err);
+          })
+    },
     getRepos(userName, page, perPage) {
     return instance
       .get(`users/${userName}/repos?page=${page}&per_page=${perPage}`)
-      .then((response) => response.data);
+      .then((response) => response.data)
   },
 };

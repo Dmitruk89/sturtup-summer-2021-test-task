@@ -1,7 +1,12 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { inputChange, toggleIsFetching } from '../../redux/headerReducer';
-import { toggleShowProfile, toggleHasUser, setUserData, setUserRepos } from '../../redux/profileReducer';
+import { inputChange, toggleIsFetching, clearInput } from '../../redux/headerReducer';
+import { 
+    toggleShowProfile, 
+    toggleShowEmpty, 
+    setUserData, 
+    setUserRepos
+} from '../../redux/profileReducer';
 import Header from './Header';
 
 class HeaderContainer extends React.Component{
@@ -12,24 +17,26 @@ class HeaderContainer extends React.Component{
         inputChange={this.props.inputChange}
         toggleIsFetching={this.props.toggleIsFetching}
         toggleShowProfile={this.props.toggleShowProfile}
-        toggleHasUser={this.props.toggleHasUser}
+        toggleShowEmpty={this.props.toggleShowEmpty}
         setUserData={this.props.setUserData}
         setUserRepos={this.props.setUserRepos}
+        clearInput={this.props.clearInput}
+
         />
     }
 
 }
 
 const mapStateToProps = (state) => ({
-    inputValue: state.header.inputValue,
-    isFetching: state.header.isFetching
+    inputValue: state.header.inputValue
 })
 
 export default connect(mapStateToProps, {
     inputChange,
     toggleIsFetching,
     toggleShowProfile,
-    toggleHasUser,
+    toggleShowEmpty,
     setUserData,
-    setUserRepos
+    setUserRepos,
+    clearInput
 })(HeaderContainer);

@@ -7,9 +7,10 @@ class PageContainer extends React.Component{
     render(){
       return <Page 
         showProfile={this.props.showProfile}
-        hasUser={this.props.hasUser}
+        showEmpty={this.props.showEmpty}
         profile={this.props.profile}
         repositories={this.props.repositories}
+        isFetching={this.props.isFetching}
         />
     }
 
@@ -17,9 +18,10 @@ class PageContainer extends React.Component{
 
 const mapStateToProps = (state) => ({
     showProfile: state.profile.showProfile,
-    hasUser: state.profile.hasUser,
+    showEmpty: state.profile.showEmpty,
     profile: state.profile.profile,
     repositories: state.profile.repositories,
+    isFetching: state.header.isFetching
 })
 
 export default connect(mapStateToProps, {
