@@ -2,7 +2,7 @@ const INPUT_CHANGE = 'INPUT_CHANGE';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 const defaultState = {
-    inputValue: 'test',
+    inputValue: '',
     isFetching: false
 }
 

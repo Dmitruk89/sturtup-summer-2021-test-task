@@ -3,10 +3,10 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 import ProfileRepos from './ProfileRepos/ProfileRepos';
 import NoRepos from './ProfileRepos/NoRepos';
 
-function ProfilePage() {
+function ProfilePage(props) {
   return (
     <div className={styles.profilePage}>
-        <ProfileInfo />
+        <ProfileInfo profile={props.profile}/>
         {/* <ProfileRepos /> */}
         <NoRepos />
     </div>

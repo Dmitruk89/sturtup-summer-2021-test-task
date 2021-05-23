@@ -4,12 +4,15 @@ import EmptyStatePage from './EmptyStatePage/EmptyStatePage';
 import ProfilePage from './ProfilePage/ProfilePage';
 
 
-function Page() {
+function Page(props) {
   return (
     <div className={styles.page}>
-        {/* <DefaultPage /> */}
-        {/* <EmptyStatePage /> */}
-        <ProfilePage />
+      {
+      props.showProfile ?
+      <ProfilePage profile={props.profile}/> :
+      <DefaultPage />
+      }
+      {/* <EmptyStatePage /> */}
     </div>
   );
 }

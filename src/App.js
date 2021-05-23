@@ -1,12 +1,12 @@
 import styles from './App.module.scss';
 import HeaderContainer from './components/Header/HeaderContainer';
-import Page from './pages/Page';
+import PageContainer from './pages/PageContainer';
 
 function App() {
   return (
     <div className={styles.App}>
       <HeaderContainer />
-      <Page />
+      <PageContainer />
     </div>
   );
 }

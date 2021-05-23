@@ -9,6 +9,10 @@ function Header(props) {
         <SearchField 
           inputValue={props.inputValue} 
           inputChange={props.inputChange}
+          toggleIsFetching={props.toggleIsFetching}
+          toggleShowProfile={props.toggleShowProfile}
+          toggleHasUser={props.toggleHasUser}
+          setUserData={props.setUserData}
           />
     </div>
   );
