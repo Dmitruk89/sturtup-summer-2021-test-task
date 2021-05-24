@@ -21,14 +21,17 @@ class HeaderContainer extends React.Component{
         setUserData={this.props.setUserData}
         setUserRepos={this.props.setUserRepos}
         clearInput={this.props.clearInput}
-
+        currentPage={this.props.currentPage}
+        perPage={this.props.perPage}
         />
     }
 
 }
 
 const mapStateToProps = (state) => ({
-    inputValue: state.header.inputValue
+    inputValue: state.header.inputValue,
+    currentPage: state.profile.currentPage,
+    perPage: state.profile.perPage,
 })
 
 export default connect(mapStateToProps, {

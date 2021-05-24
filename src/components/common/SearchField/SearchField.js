@@ -32,7 +32,7 @@ function SearchField(props) {
               }
               
             })
-            usersAPI.getRepos(props.inputValue, 1, 5)
+            usersAPI.getRepos(props.inputValue, props.currentPage, props.perPage)
             .then(data => {
               if (data) {
               props.setUserRepos(data);

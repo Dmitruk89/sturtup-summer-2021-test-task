@@ -15,6 +15,8 @@ function Header(props) {
           setUserData={props.setUserData}
           setUserRepos={props.setUserRepos}
           clearInput={props.clearInput}
+          currentPage={props.currentPage}
+          perPage={props.perPage}
           />
     </div>
   );

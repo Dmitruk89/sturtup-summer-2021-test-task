@@ -1,0 +1,45 @@
+.paginator{
+    color: #808080;
+    float: right;
+}
+
+.button{
+    color: #808080;
+    margin: 0 10px;
+    padding: 5px;
+    border: none;
+    background-color: #F9F9F9;
+
+    &:hover {
+        cursor: pointer;
+        color: #0064EB;
+    }
+
+    &:disabled {
+        cursor: default;
+        color: #808080;
+    }
+}
+
+.page {
+    margin: 0 8px;
+    padding: 3px 7px;
+
+    &:hover {
+        cursor: pointer;
+        color: #0064EB;
+    }
+}
+
+.currentPage {
+    margin: 0 8px;
+    padding: 3px 7px;
+    color: #fff;
+    background-color: #0064EB;
+    border-radius: 3px;
+    font-size: 14px;
+
+    &:hover {
+        cursor: default;
+    }
+}

@@ -2,11 +2,15 @@
     font-family: Inter;
     font-style: normal;
     
-
+    
     h2 {
         font-weight: 600;
         font-size: 32px;
         line-height: 130%;
         padding: 28px 0;
     }
+}
+
+.repositories {
+    min-height: 600px;
 }
