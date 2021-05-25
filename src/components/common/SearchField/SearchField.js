@@ -13,12 +13,13 @@ function SearchField(props) {
             usersAPI.getProfile(props.inputValue)
             .then(data => {
               if (data) {
+                console.log(data)
               props.toggleIsFetching();
               props.toggleShowProfile(true);
               props.toggleShowEmpty(false);
               props.setUserData({
                 avatar: data.avatar_url,
-                fullName: data.name.split('.').join(' '),
+                fullName: data.name,
                 linkName: data.login,
                 linkUrl: data.html_url,
                 followers: data.followers,
