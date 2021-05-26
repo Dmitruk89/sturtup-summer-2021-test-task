@@ -1,4 +1,9 @@
 .profilePage {
     display: grid;
     grid-template-columns: 2fr 5fr;
+
+    @media(max-width: 760px){
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -1,4 +1,5 @@
 import styles from './Paginator.module.scss';
+import ReactPaginate from 'react-paginate';
 
 
 function Paginator(props) {
@@ -8,33 +9,26 @@ function Paginator(props) {
     if(itemTo > props.totalRepos){
         itemTo = props.totalRepos
     }
-    const pages = [];
-    const prevButton = '<';
-    const nextButton = '>';
-
-    for (let i = 1; i <= totalPages; i ++){
-        pages.push(i);
-    }    
 
   return (
-    <div className={styles.paginator}>
+    <div className={styles.paginatorContainer}>
        <span>{itemFrom}-{itemTo} of {props.totalRepos} items</span>
-       <button
-        onClick={ () => props.onPageChange(props.currentPage - 1)}
-        disabled={props.currentPage === 1} 
-        className={styles.button}
-        >{prevButton}</button>
-       {pages.map(i => {
-            return <span 
-            onClick={() => props.onPageChange(i)} 
-            key={i} 
-            className={props.currentPage === i ? styles.currentPage : styles.page}>{i}</span>
-        })}
-        <button
-            onClick={ () => props.onPageChange(props.currentPage + 1)}
-            disabled={props.currentPage === totalPages} 
-            className={styles.button}
-            >{nextButton}</button>
+       <ReactPaginate
+      previousLabel={'<'}
+      nextLabel={'>'}
+      breakLabel={'...'}
+      breakClassName={'break-me'}
+      pageCount={totalPages}
+      marginPagesDisplayed={1}
+      pageRangeDisplayed={2}
+      onPageChange={props.onPageChange}
+      containerClassName={styles.paginator}
+      pageClassName={styles.page}
+      activeClassName={styles.currentPage}
+      nextClassName={styles.button}
+      previousLinkClassName={styles.button}
+      disabledClassName={styles.disabled}
+    />
     </div>
   );
 }

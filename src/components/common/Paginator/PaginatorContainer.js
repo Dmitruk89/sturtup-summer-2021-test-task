@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 import Paginator from './Paginator';
 import { setCurrentPage, setUserRepos } from '../../../redux/profileReducer';
 import { usersAPI } from '../../../api/api';
+import styles from './Paginator.module.scss';
 
 class PaginatorContainer extends React.Component{
-
     onPageChange = (page) => {
-        usersAPI.getRepos(this.props.profileName, page, this.props.perPage)
+      const pageNumber = page.selected + 1;
+        usersAPI.getRepos(this.props.profileName, pageNumber, this.props.perPage)
             .then(data => {
               if (data) {
               this.props.setUserRepos(data);
@@ -15,18 +16,36 @@ class PaginatorContainer extends React.Component{
               console.log('no data');
             }
             })
-        this.props.setCurrentPage(page);
+        this.props.setCurrentPage(pageNumber);
     }
 
     render(){
-      return <Paginator
-        onPageChange={this.onPageChange}
-        repositories={this.props.repositories}
-        setCurrentPage={this.props.setCurrentPage}
-        currentPage={this.props.currentPage}
-        perPage={this.props.perPage}
-        totalRepos={this.props.totalRepos}
-        />
+      return <Paginator 
+      repositories={this.props.repositories}
+      currentPage={this.props.currentPage}
+      perPage={this.props.perPage}
+      totalRepos={this.props.totalRepos}
+      profileName={this.props.profileName}
+      setCurrentPage={this.props.setCurrentPage}
+      setUserRepos={this.props.setUserRepos}
+      onPageChange={this.onPageChange}
+      />
+    //   <ReactPaginate
+    //   previousLabel={'<'}
+    //   nextLabel={'>'}
+    //   breakLabel={'...'}
+    //   breakClassName={'break-me'}
+    //   pageCount={Math.ceil(this.props.totalRepos / this.props.perPage)}
+    //   marginPagesDisplayed={1}
+    //   pageRangeDisplayed={2}
+    //   onPageChange={this.onPageChange}
+    //   containerClassName={styles.paginator}
+    //   pageClassName={styles.page}
+    //   activeClassName={styles.currentPage}
+    //   nextClassName={styles.button}
+    //   previousLinkClassName={styles.button}
+    //   disabledClassName={styles.disabled}
+    // />
     }
 
 }
