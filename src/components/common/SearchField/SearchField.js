@@ -13,7 +13,6 @@ function SearchField(props) {
             usersAPI.getProfile(props.inputValue)
             .then(data => {
               if (data) {
-                console.log(data)
               props.toggleIsFetching();
               props.toggleShowProfile(true);
               props.toggleShowEmpty(false);
@@ -38,7 +37,7 @@ function SearchField(props) {
               if (data) {
               props.setUserRepos(data);
             } else {
-              console.log('no data');
+              props.setUserRepos([]);
             }
             })
           }}>

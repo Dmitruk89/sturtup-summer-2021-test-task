@@ -1,12 +1,13 @@
 import styles from './Header.module.scss';
 import logo from '../../assets/Logo.png';
-import SearchField from '../common/SearchField/SearchField';
+import SearchFieldContainer from '../common/SearchField/SearchFieldContainer';
 
 function Header(props) {
   return (
     <div className={styles.header}>
         <img alt='logo' src={logo} />
-        <SearchField 
+        <SearchFieldContainer />
+        {/* <SearchField 
           inputValue={props.inputValue} 
           inputChange={props.inputChange}
           toggleIsFetching={props.toggleIsFetching}
@@ -17,7 +18,7 @@ function Header(props) {
           clearInput={props.clearInput}
           currentPage={props.currentPage}
           perPage={props.perPage}
-          />
+          /> */}
     </div>
   );
 }

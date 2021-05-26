@@ -1,20 +1,15 @@
 import * as axios from "axios";
 
-const instance = axios.create({
-  baseURL: "https://api.github.com/",
-});
-
 export const usersAPI = {
     getProfile(userName) {
-        return instance.get(`users/${userName}`)
-          .then((response) => response.data)
-          .catch((err) => {
-            console.log(err);
-          })
+      return axios.get(`https://api.github.com/users/${userName}`)
+          .then(response => response.data)
+          .catch(err => console.log(err))
     },
     getRepos(userName, page, perPage) {
-    return instance
-      .get(`users/${userName}/repos?page=${page}&per_page=${perPage}`)
-      .then((response) => response.data)
+    return axios
+      .get(`https://api.github.com/users/${userName}/repos?page=${page}&per_page=${perPage}`)
+      .then(response => response.data)
+      .catch(err => console.log(err))
   },
 };

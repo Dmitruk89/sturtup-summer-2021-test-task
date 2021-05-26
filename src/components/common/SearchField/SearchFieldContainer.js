@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { inputChange, toggleIsFetching, clearInput } from '../../redux/headerReducer';
+import { inputChange, toggleIsFetching, clearInput } from '../../../redux/headerReducer';
 import { 
     toggleShowProfile, 
     toggleShowEmpty, 
     setUserData, 
     setUserRepos
-} from '../../redux/profileReducer';
-import Header from './Header';
+} from '../../../redux/profileReducer';
+import SearchField from './SearchField';
 
-class HeaderContainer extends React.Component{
+class SearchFieldContainer extends React.Component{
 
     render(){
-      return <Header 
+      return <SearchField 
         inputValue={this.props.inputValue}
         inputChange={this.props.inputChange}
         toggleIsFetching={this.props.toggleIsFetching}
@@ -42,4 +42,4 @@ export default connect(mapStateToProps, {
     setUserData,
     setUserRepos,
     clearInput
-})(HeaderContainer);
+})(SearchFieldContainer);

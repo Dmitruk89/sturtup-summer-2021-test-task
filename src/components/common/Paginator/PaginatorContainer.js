@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Paginator from './Paginator';
 import { setCurrentPage, setUserRepos } from '../../../redux/profileReducer';
 import { usersAPI } from '../../../api/api';
-import styles from './Paginator.module.scss';
 
 class PaginatorContainer extends React.Component{
     onPageChange = (page) => {
