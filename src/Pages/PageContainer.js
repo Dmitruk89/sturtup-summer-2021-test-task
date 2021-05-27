@@ -24,6 +24,4 @@ const mapStateToProps = (state) => ({
     isFetching: state.header.isFetching
 })
 
-export default connect(mapStateToProps, {
-    
-})(PageContainer);
+export default connect(mapStateToProps, {})(PageContainer);

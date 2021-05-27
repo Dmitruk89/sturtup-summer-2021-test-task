@@ -19,32 +19,12 @@ class PaginatorContainer extends React.Component{
     }
 
     render(){
-      return <Paginator 
-      repositories={this.props.repositories}
+      return <Paginator
       currentPage={this.props.currentPage}
       perPage={this.props.perPage}
       totalRepos={this.props.totalRepos}
-      profileName={this.props.profileName}
-      setCurrentPage={this.props.setCurrentPage}
-      setUserRepos={this.props.setUserRepos}
       onPageChange={this.onPageChange}
       />
-    //   <ReactPaginate
-    //   previousLabel={'<'}
-    //   nextLabel={'>'}
-    //   breakLabel={'...'}
-    //   breakClassName={'break-me'}
-    //   pageCount={Math.ceil(this.props.totalRepos / this.props.perPage)}
-    //   marginPagesDisplayed={1}
-    //   pageRangeDisplayed={2}
-    //   onPageChange={this.onPageChange}
-    //   containerClassName={styles.paginator}
-    //   pageClassName={styles.page}
-    //   activeClassName={styles.currentPage}
-    //   nextClassName={styles.button}
-    //   previousLinkClassName={styles.button}
-    //   disabledClassName={styles.disabled}
-    // />
     }
 
 }
